@@ -147,7 +147,7 @@ def process_files(input_df_path, input1_path, input2_path, output_file):
                                         
                                         correlations = (correlation, p_value_correlation, slope, intercept, r_squared, p_value, t_value_slope, std_err)
                                     else:
-                                        correlations = ('n/a', 'n/a', 'n/a', 'n/a', 'n/a', 'n/a', 'n/a', 'n/a', 'n/a')
+                                        correlations = ('n/a', 'n/a', 'n/a', 'n/a', 'n/a', 'n/a', 'n/a', 'n/a')
                                     data_to_write.extend(correlations)
                         writer.writerow(data_to_write)
                         print(f"Country '{country}' Industry '{industry}' processed.")    
@@ -159,6 +159,6 @@ def process_files(input_df_path, input1_path, input2_path, output_file):
 #                        print(f"Country '{country}' Industry '{industry}' processed.")
                 
                 # Write totals for the country
-                f.write(f"{country},TOTAL,{totals['total_value_added']},{totals['EXGR_VA']},{totals['total_m_loc_consumed']},{totals['total_m_foreign_consumed']},{totals['total_m_total_consumed']},{totals['total_gfcf']}\n")
+#                f.write(f"{country},TOTAL,{totals['total_value_added']},{totals['EXGR_VA']},{totals['total_m_loc_consumed']},{totals['total_m_foreign_consumed']},{totals['total_m_total_consumed']},{totals['total_gfcf']}\n")
 
 process_files("Output_EXGR_DVA1.csv", "Input1.csv", "Input2.csv", "BASE_FINAL.csv")
